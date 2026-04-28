@@ -7,12 +7,23 @@ const mensagem = document.querySelector('#msg-status');
 
 function mostrarStatus(){
 
-    mensagem.textContent = "Status: Disponível para novos projetos!";
+    if (mensagem.style.display === 'none' || mensagem.style.display === '') {
+        
+        mensagem.textContent = "Disponível para novos projetos!"
+        mensagem.style.display = "block"
+        botao.textContent = 'Ocultar'
+        botao.style.backgroundColor = '#ff4d4d'
 
-    mensagem.style.display = "block";
+    } else {
 
-    console.log("Botão clicado com sucesso!");
+        botao.textContent = 'Ver Status'
+        mensagem.style.display = "none"
+        botao.style.backgroundColor = ''
 
+    }
+    
 }
+
+// eventos
 
 botao.addEventListener('click', mostrarStatus);

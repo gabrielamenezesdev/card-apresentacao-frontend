@@ -2,6 +2,7 @@
 
 const botao = document.querySelector('#btn-status');
 const mensagem = document.querySelector('#msg-status');
+const transition = document.querySelector('#btn-mudar')
 
 // funções
 
@@ -24,6 +25,13 @@ function mostrarStatus(){
     
 }
 
+function alterarTema(){
+    
+    document.body.classList.toggle('mudar-tema')
+
+}
+
 // eventos
 
 botao.addEventListener('click', mostrarStatus);
+transition.addEventListener('click', alterarTema);
